@@ -22,7 +22,7 @@ public class RootFinder {
             System.out.println("Root cannot be found by either method.");
         }
 
-        FunctionPlotter.plotFunction(-10, 10, 0.1, RootFinder::computeFunction);
+        FunctionPlotter.plotFunction(-10.0, 10.0, 1.0, RootFinder::computeFunction);
     }
 
     private static double findRoot(double a, double b) {
