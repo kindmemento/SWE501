@@ -24,10 +24,15 @@ public class RootFinder {
     }
 
     private static double findRoot(double a, double b) {
+        if (computeFunction(a) * computeFunction(b) >= 0) {
+            // Function does not change sign within the interval, indicating failure to find root.
+            return Double.MAX_VALUE;
+        }
+
         double c = a;
         while ((b - a) >= EPSILON) {
             c = (a + b) / 2;
-            if (computeFunction(c) == 0.0) {
+            if (Math.abs(computeFunction(c)) < EPSILON) {
                 return c;
             } else if (computeFunction(c) * computeFunction(a) < 0) {
                 b = c;
@@ -35,7 +40,7 @@ public class RootFinder {
                 a = c;
             }
         }
-        return Double.MAX_VALUE; // Root cannot be found inside the while loop, therefore the function return Double.MAX_VALUE to indicate failure.
+        return c;
     }
 
     private static double secantMethod(double x0, double x1) {
