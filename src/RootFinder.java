@@ -38,9 +38,14 @@ public class RootFinder {
         return Double.MAX_VALUE; // Root cannot be found inside the while loop, therefore the function return Double.MAX_VALUE to indicate failure.
     }
 
-    private static double secantMethod(double a, double b) {
-        // @TODO: Implement function body.
-        return 0.0; // placeholder value
+    private static double secantMethod(double x0, double x1) {
+        double x2;
+        do {
+            x2 = (x0 * computeFunction(x1) - x1 * computeFunction(x0)) / (computeFunction(x1) - computeFunction(x0));
+            x0 = x1;
+            x1 = x2;
+        } while (Math.abs(computeFunction(x2)) > EPSILON);
+        return x2;
     }
 
     private static double computeFunction(double x) {
