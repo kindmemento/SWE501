@@ -14,11 +14,28 @@ public class RootFinder {
             System.out.println("Root cannot be found by the Bisection Method. Trying the Secant Method.");
             root = secantMethod(a, b);
         }
+
+        if (root != Double.MAX_VALUE) {
+            System.out.printf("Root: %.3f ", root);
+            System.out.println((root == findRoot(a, b)) ? "(Bisection Method)" : "(Secant Method)");
+        } else {
+            System.out.println("Root cannot be found by either method.");
+        }
     }
 
     private static double findRoot(double a, double b) {
-        // @TODO: Implement function body.
-        return 0.0; // placeholder value
+        double c = a;
+        while ((b - a) >= EPSILON) {
+            c = (a + b) / 2;
+            if (computeFunction(c) == 0.0) {
+                return c;
+            } else if (computeFunction(c) * computeFunction(a) < 0) {
+                b = c;
+            } else {
+                a = c;
+            }
+        }
+        return Double.MAX_VALUE; // Root cannot be found inside the while loop, therefore the function return Double.MAX_VALUE to indicate failure.
     }
 
     private static double secantMethod(double a, double b) {
