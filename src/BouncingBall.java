@@ -45,3 +45,37 @@ class Ball {
         // @TODO: Implement checkCollision class method
     }
 }
+
+class Obstacle {
+    private double xCenter;
+    private double yCenter;
+    private double width;
+    private double height;
+
+    public Obstacle(double xCenter, double yCenter, double width, double height) {
+        this.xCenter = xCenter;
+        this.yCenter = yCenter;
+        this.width = width;
+        this.height = height;
+    }
+
+    public void draw() {
+        // @TODO: Implement draw class method
+    }
+
+    public double getXCenter() {
+        return xCenter;
+    }
+
+    public double getYCenter() {
+        return yCenter;
+    }
+
+    public double getWidth() {
+        return width;
+    }
+
+    public double getHeight() {
+        return height;
+    }
+}
