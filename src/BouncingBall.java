@@ -26,7 +26,8 @@ class Ball {
     }
 
     public void draw() {
-        // @TODO: Implement draw class method
+        StdDraw.setPenColor(ballColor);
+        StdDraw.filledCircle(xCenter, yCenter, ballRadius);
     }
 
     public void move() {
