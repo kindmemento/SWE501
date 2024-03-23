@@ -60,7 +60,8 @@ class Obstacle {
     }
 
     public void draw() {
-        // @TODO: Implement draw class method
+        StdDraw.setPenColor(Color.BLACK);
+        StdDraw.filledRectangle(xCenter, yCenter, width / 2, height / 2);
     }
 
     public double getXCenter() {
