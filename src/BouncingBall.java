@@ -1,5 +1,6 @@
 import java.awt.Color;
 import java.util.Random;
+import java.util.ArrayList;
 
 public class BouncingBall {
     public static void main(String[] args) {
@@ -41,8 +42,17 @@ class Ball {
         }
     }
 
-    public void checkCollision() {
-        // @TODO: Implement checkCollision class method
+    public void checkCollision(ArrayList<Obstacle> obstacles) {
+        for (Obstacle obstacle : obstacles) {
+            if (xCenter + ballRadius >= obstacle.getXCenter() - obstacle.getWidth() / 2 &&
+                xCenter - ballRadius <= obstacle.getXCenter() + obstacle.getWidth() / 2 &&
+                yCenter + ballRadius >= obstacle.getYCenter() - obstacle.getHeight() / 2 &&
+                yCenter - ballRadius <= obstacle.getYCenter() + obstacle.getHeight() / 2) {
+                velocityX = -velocityX;
+                velocityY = -velocityY;
+                break;
+            }
+        }
     }
 }
 
