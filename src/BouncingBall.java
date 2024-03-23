@@ -14,4 +14,19 @@ class Ball {
     private double ballRadius;
     private Color ballColor;
 
+    public Ball() {
+        // @TODO: Implement Ball constructor method
+    }
+
+    public void draw() {
+        // @TODO: Implement draw class method
+    }
+
+    public void move() {
+        // @TODO: Implement move class method
+    }
+
+    public void checkCollision() {
+        // @TODO: Implement checkCollision class method
+    }
 }
