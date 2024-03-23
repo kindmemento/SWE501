@@ -1,4 +1,5 @@
 import java.awt.Color;
+import java.util.Random;
 
 public class BouncingBall {
     public static void main(String[] args) {
@@ -15,7 +16,13 @@ class Ball {
     private Color ballColor;
 
     public Ball() {
-        // @TODO: Implement Ball constructor method
+        Random random = new Random();
+        xCenter = random.nextDouble();
+        yCenter = random.nextDouble();
+        velocityX = random.nextDouble() * 0.03 - 0.01;
+        velocityY = random.nextDouble() * 0.03 - 0.01;
+        ballRadius = 0.02;
+        ballColor = Color.BLUE;
     }
 
     public void draw() {
