@@ -31,7 +31,14 @@ class Ball {
     }
 
     public void move() {
-        // @TODO: Implement move class method
+        xCenter += velocityX;
+        yCenter += velocityY;
+        if (xCenter + ballRadius >= 1 || xCenter - ballRadius <= 0) {
+            velocityX = -velocityX;
+        }
+        if (yCenter + ballRadius >= 1 || yCenter - ballRadius <= 0) {
+            velocityY = -velocityY;
+        }
     }
 
     public void checkCollision() {
