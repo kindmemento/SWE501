@@ -9,7 +9,8 @@ public class BouncingBall {
 
         Obstacle[] obstacles = {
                 new Obstacle(40, 20),
-                new Obstacle(60, 80)
+                new Obstacle(60, 80),
+                new Obstacle(0, 75)
         };
 
         Ball ball = new Ball(20, 50, 1, 1, 3, Color.RED);
