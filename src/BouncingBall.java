@@ -1,6 +1,4 @@
 import java.awt.Color;
-import java.util.Random;
-import java.util.ArrayList;
 
 public class BouncingBall {
     public static void main(String[] args) {
