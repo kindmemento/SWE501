@@ -71,10 +71,10 @@ class Ball {
         }
 
         for (Obstacle obstacle : obstacles) {
-            double obstacleLeft = obstacle.getXCenter() - 0.5;
-            double obstacleRight = obstacle.getXCenter() + 0.5;
-            double obstacleTop = obstacle.getYCenter() + 0.5;
-            double obstacleBottom = obstacle.getYCenter() - 0.5;
+            double obstacleLeft = obstacle.getXCenter() - 7.5;
+            double obstacleRight = obstacle.getXCenter() + 7.5;
+            double obstacleTop = obstacle.getYCenter() + 5.0;
+            double obstacleBottom = obstacle.getYCenter() - 5.0;
 
             if (xCenter + ballRadius >= obstacleLeft && xCenter - ballRadius <= obstacleRight &&
                 yCenter + ballRadius >= obstacleBottom && yCenter - ballRadius <= obstacleTop) {
@@ -99,7 +99,7 @@ class Obstacle {
 
     public void draw() {
         StdDraw.setPenColor(Color.BLACK);
-        StdDraw.rectangle(xCenter, yCenter, 7.5, 10.0);
+        StdDraw.filledRectangle(xCenter, yCenter, 7.5, 5.0);
     }
 
     public double getXCenter() {
